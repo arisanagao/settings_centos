@@ -1,5 +1,6 @@
 # .bash_profile
-PS1="\n\u@\h:\[\e[91m\]\w\e[0m\]\n$"
+PS1="\n\t \u@\h:\[\e[91m\]\w ${PS1_GIT_BRANCH}\e[0m\]\n$"
+
 export LS_COLORS='di=00;36'
 alias l='ls -lh'
 alias ll='ls -lhA'
@@ -11,9 +12,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
-export PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
