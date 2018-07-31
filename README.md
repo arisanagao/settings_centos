@@ -3,9 +3,10 @@
 cat /etc/redhat-release
 ```
 
-## lessに色をつける
+## Install List
 ```
-sudo yum install -y source-hightlight
+sudo yum install tree
+sudo yum install -y source-hightlight # lessに色をつける
 ```
 
 ## Install rbenv & ruby-build
@@ -23,7 +24,7 @@ rbenv global 2.5.0
 ```
 
 ## Install Docker
-https://docs.docker.com/install/linux/docker-ce/centos/
+[Docker CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
 
 ```
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
