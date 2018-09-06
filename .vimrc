@@ -6,5 +6,17 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-autocmd BufWritePre * :%s/\s\+$//ge "行末の空白を削除"
-autocmd BufWritePre * :%s/^\+$//ge  "空白のみの行の空白を削除"
+function! s:remove_dust()
+	let cursor = getpos(".")
+
+	" 保存時に行末の空白を除去する
+	%s/\s\+$//ge
+
+	" 保存時に空行の空白を除去する
+	%s/^\+$//ge
+
+	call setpos(".", cursor)
+	unlet cursor
+endfunction
+
+autocmd BufWritePre * call <SID>remove_dust()
