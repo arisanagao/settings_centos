@@ -1,5 +1,7 @@
 colorscheme ron
 set number
+set encoding=utf-8
+
 augroup auto_comment_off
   autocmd!
   autocmd BufEnter * setlocal formatoptions-=r
@@ -20,3 +22,8 @@ function! s:remove_dust()
 endfunction
 
 autocmd BufWritePre * call <SID>remove_dust()
+autocmd InsertEnter * set nohlsearch
+
+" F10:行番号表示／非表示
+nnoremap <F10> :<C-u>setlocal number!<CR>
+inoremap <F10> <Esc>:<C-u>setlocal number!<CR><Insert>

@@ -3,10 +3,21 @@
 cat /etc/redhat-release
 ```
 
+## Create Symbolic Link
+```
+ln -sf ~/settings_centos/.bash_profile ~/.bash_profile
+ln -sf ~/settings_centos/.vimrc ~/.vimrc
+```
+
 ## Install List
 ```
 sudo yum install tree
 sudo yum install -y source-hightlight # lessに色をつける
+```
+
+## Install Ruby using RVM
+```
+TBC
 ```
 
 ## Install rbenv & ruby-build
