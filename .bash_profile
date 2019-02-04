@@ -9,7 +9,7 @@ alias la='ls -A'
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+  . ~/.bashrc
 fi
 
 # User specific environment and startup programs
@@ -38,3 +38,4 @@ fi
 #### end ####
 
 PS1="\n\t \u@\h:\[\e[91m\]\w ${PS1_GIT_BRANCH}\e[0m\]\n$"
+export PROMPT_COMMAND="history -a"
