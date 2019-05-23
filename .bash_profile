@@ -7,6 +7,15 @@ alias l='ls -lh'
 alias ll='ls -lhA'
 alias la='ls -A'
 
+alias ..2='cd ../..'
+alias ..3='cd ../../..'
+alias q='exit'
+
+alias be='bundle exec'
+alias railsc='bundle exec rails c'
+alias dbmigrate='bundle exec rails db:create db:migrate'
+alias tree='tree -a -C -I "node_modules|cache|bin|.git"'
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
@@ -35,5 +44,7 @@ else
 fi
 #### end ####
 
-PS1="\n\t \u@\h:\[\e[91m\]\w ${PS1_GIT_BRANCH}\e[0m\]\n$"
+# .bashrc でHOMENAMEをexportする
+PS1="\n\t \u@${HOMENAME}:\[\e[91m\]\w ${PS1_GIT_BRANCH}\e[0m\]\n$"
+
 export PROMPT_COMMAND="history -a"
