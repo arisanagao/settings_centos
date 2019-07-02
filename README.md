@@ -4,10 +4,15 @@ cat /etc/redhat-release
 ```
 
 ## Create Symbolic Link
+settings_centosディレクトリに移動して以下を実行する。
+
 ```
-ln -sf ~/settings_centos/.bash_profile ~/.bash_profile
-ln -sf ~/settings_centos/.vimrc ~/.vimrc
+PWD_DIR=`pwd`
+ln -sf ${PWD_DIR}/.bash_profile ~/.bash_profile
+ln -sf ${PWD_DIR}/.vimrc ~/.vimrc
+ln -sf ${PWD_DIR}/.pryrc ~/.pryrc
 ```
+シンボリックリンクを上書きしたい場合は`ln -nsf`にして実行。
 
 ## Install List
 ```

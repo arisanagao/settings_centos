@@ -14,7 +14,7 @@ alias q='exit'
 alias be='bundle exec'
 alias railsc='bundle exec rails c'
 alias dbmigrate='bundle exec rails db:create db:migrate'
-alias tree='tree -a -C -I "node_modules|cache|bin|.git"'
+alias tree='tree -a -C -I "node_modules|cache|.git|coverage"'
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
@@ -33,7 +33,8 @@ function length()
 function init-prompt-git-branch()
 {
   git symbolic-ref HEAD 2>/dev/null >/dev/null &&
-  echo "($(git symbolic-ref HEAD 2>/dev/null | sed 's/^refs\/heads\///'))"
+  echo "$(git symbolic-ref HEAD 2>/dev/null | sed 's/^refs\/heads\///')"
+  # echo "($(git symbolic-ref HEAD 2>/dev/null | sed 's/^refs\/heads\///'))"
 }
 
 if which git 2>/dev/null >/dev/null
